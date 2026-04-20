@@ -18,6 +18,7 @@ namespace EFCorePracticeApi
 
                 );
 
+            builder.Services.AddSwaggerGen();
             // Add services to the container.
 
             builder.Services.AddControllers();
@@ -29,6 +30,8 @@ namespace EFCorePracticeApi
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
+                app.UseSwagger();
+                app.UseSwaggerUI();
                 app.MapOpenApi();
             }
 
